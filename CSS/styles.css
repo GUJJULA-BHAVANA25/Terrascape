@@ -48,9 +48,39 @@
 .Main-Heading{
     width: 100%;
     height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #Main-Heading{
     width: fit-content;
     height: fit-content;
+    font-size: 3.5vw;
+    -webkit-text-stroke: 0.2vw rgba(65, 125, 65, 0.565);
+    color: white;
+}
+
+#Main-Heading::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: rgba(65, 125, 65, 0.565);
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid rgba(65, 125, 65, 0.565);
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate
+{
+    0%{
+        width: 0;
+    }    
+    70%{
+        width: 100%;
+    }
 }
