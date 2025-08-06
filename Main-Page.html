@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Terrascape</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="CSS/styles.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terrascape</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <body>
-        <div class="Header">
-            <div class="Header-Logo">
-                <h1 id="Header-Logo">Terrascape</h1>
-            </div>
-
-            <div class="Header-Components">
-                <ul class="HeaderComponents">
-                    <li><a id="Header-Components-Home">Home</a></li>
-                    <li><a id="Header-Components-About">About</a></li>
-                    <li><a id="Header-Components-Services">Services</a></li>
-                    <li><a id="Header-Components-Contact">Contact</a></li>
-                </ul>
-            </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <h1 class="logo-text">Terrascape</h1>
         </div>
+        <nav class="header-components">
+            <ul class="header-components-list">
+                <li><a class="header-link" href="#">Home</a></li>
+                <li><a class="header-link" href="#">About</a></li>
+                <li><a class="header-link" href="#">Services</a></li>
+                <li><a class="header-link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="Main-Heading">
-            <h1 data-text="Transform Your Rooftop into a Green Paradise" id="Main-Heading">Transform Your Rooftop into a Green Paradise</h1>
-        </div>
-    </body>
+    <main class="main-heading">
+        <h1 class="animated-heading" data-text="Transform Your Rooftop into a Green Paradise">
+            Transform Your Rooftop into a Green Paradise
+        </h1>
+    </main>
+
+    <!-- JavaScript to remove cursor after typing -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const heading = document.querySelector('.animated-heading');
+            setTimeout(() => {
+                heading.classList.add('typing-done');
+            }, 6000); // match this duration to your typing animation (6s)
+        });
+    </script>
+</body>
 </html>

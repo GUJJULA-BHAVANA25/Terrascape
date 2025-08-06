@@ -1,86 +1,144 @@
-.Header {
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header styles */
+.header {
     width: 100%;
     height: 100px;
     border-bottom: 1px solid yellowgreen;
     display: flex;
-    align-items: center;       
-    justify-content: space-between; 
-    padding: 0 40px;           
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background-color: white;
 }
 
-.Header-Logo {
-    height: 100%; 
-}
-
-#Header-Logo{
-    color: rgba(7, 75, 7, 0.565);
-}
-
-.Header-Components {
+.header-logo {
     display: flex;
-    align-items: center;     
-    gap: 20px;   
+    align-items: center;
 }
 
-.HeaderComponents{
-    list-style-type: none;
+.logo-text {
+    color: rgba(7, 75, 7, 0.565);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.header-components {
+    display: flex;
+    align-items: center;
+}
+
+.header-components-list {
+    list-style: none;
     display: flex;
     flex-direction: row;
     gap: 30px;
-    
 }
 
-#Header-Components-Home,
-#Header-Components-About,
-#Header-Components-Services,
-#Header-Components-Contact{
+.header-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-#Header-Components-Home:hover,
-#Header-Components-About:hover,
-#Header-Components-Services:hover,
-#Header-Components-Contact:hover{
+.header-link:hover {
     color: rgba(7, 75, 7, 0.565);
 }
 
-.Main-Heading{
+/* Main heading section */
+.main-heading {
     width: 100%;
-    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 60px;
 }
 
-#Main-Heading{
-    width: fit-content;
-    height: fit-content;
+/* Animated Heading */
+.animated-heading {
+    position: relative;
     font-size: 3.5vw;
-    -webkit-text-stroke: 0.2vw rgba(65, 125, 65, 0.565);
+    font-family: 'Courier New', Courier, monospace;
     color: white;
+    -webkit-text-stroke: 0.2vw rgba(65, 125, 65, 0.565);
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-#Main-Heading::before{
+/* Typing effect */
+.animated-heading::before {
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 100%;
     color: rgba(65, 125, 65, 0.565);
-    -webkit-text-stroke: 0vw #383d52;
     border-right: 2px solid rgba(65, 125, 65, 0.565);
+    white-space: nowrap;
     overflow: hidden;
-    animation: animate 6s linear infinite;
+    width: 0;
+    animation: typing 6s steps(45) forwards;
 }
 
-@keyframes animate
-{
-    0%{
-        width: 0;
-    }    
-    70%{
-        width: 100%;
+/* Blinking cursor */
+.animated-heading::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    color: rgba(65, 125, 65, 0.565);
+    animation: blink 0.7s step-end infinite;
+}
+
+/* Hide cursor after typing */
+.animated-heading.typing-done::after {
+    display: none;
+}
+
+/* Keyframes */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .header-components-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .main-heading {
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+
+    .animated-heading {
+        font-size: 6vw;
+        text-align: center;
     }
 }
