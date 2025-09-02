@@ -6,5 +6,6 @@
 -->npm install express
 -->npm install dotenv
 -->starting writing our backend
--->db.js : userSchema
--->
+-->db.js : userSchema, bookingSchema
+-->routers 
+-->database connection
