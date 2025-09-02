@@ -1,14 +1,14 @@
-const Router = require("express");
-const { userModel } = require("../db");
+const {Router} = require("express");
+const { UserModel } = require("../db");
 
 const UserRouter = Router();
 
 UserRouter.post("/signup",async function(req, res) {
-    const { email, password, firstName, lastName } = req.body;
+    const {email, password, firstName, lastName} = req.body;
 
-    await userModel.create({
+    await UserModel.create({
         email,
-        password,
+        password,               // the above line and this line does the same job
         firstName,
         lastName
     })
