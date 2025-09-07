@@ -17,15 +17,17 @@
 
     <div class="container">
         <h2 id="signup-heading">Signup</h2>
-        <div>
-            <input type="email" placeholder="Email" required/>
-            <input type="password" placeholder="Password" required/>
-            <input type="firstName" placeholder="FirstName" required/>
-            <input type="lastName" placeholder="LastName" required/>
-        </div>
-        <div>
-            <button class="Signup-btn">Signup</button>
-        </div>
+        <form action="/TerraceGarden/User/signup" method="POST">
+            <div>
+                <input type="email" name="email" placeholder="Email" required/>
+                <input type="password" name="password" placeholder="Password" required/>
+                <input type="firstName" name="firstName" placeholder="FirstName" required/>
+                <input type="lastName" name="lastName" placeholder="LastName" required/>
+            </div>
+            <div>
+                <button class="Signup-btn">Signup</button>
+            </div>
+        </form>
         <div class="google-btn">
             <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google Logo" />
             Continue with Google
@@ -34,5 +36,6 @@
             <p>Already have an account<a href=""> Signin</a></p>
         </div>
     </div>
+    <script src="user-signup.js"></script>
 </body>
 </html>
