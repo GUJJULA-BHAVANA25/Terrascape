@@ -32,7 +32,7 @@ UserRouter.post("/signup",async function(req, res) {
     }
 })
 
-UserRouter.post("/signin", async function (req, res) {
+UserRouter.post("/signin", UserMiddleware, async function (req, res) {
     const { email, password } = req.body;
 
     const user = await UserModel.findOne({

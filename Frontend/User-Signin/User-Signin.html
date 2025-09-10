@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraceGarden</title>
+    <link rel="stylesheet" href="User-Signin.css">
+</head>
+<body>
+    <div class="floating-emoji">&#127793;</div>
+    <div class="floating-emoji">&#127804;</div>
+    <div class="floating-emoji">&#127826;</div>
+    <div class="floating-emoji">&#127808;</div>
+    <div class="floating-emoji">&#127813;</div>
+    <div class="floating-emoji">&#129388;</div>
+    <div class="floating-emoji">&#127815;</div>
+
+    <div class="container">
+        <h2 id="signin-heading">SignIn</h2>
+        <form action="/TerraceGarden/User/signin" method="POST">
+            <div>
+                <input type="email" name="email" placeholder="Email" required/>
+                <input type="password" name="password" placeholder="Password" required/>
+            </div>
+            <div>
+                <button class="SignIn-btn">SignIn</button>
+            </div>
+        </form>
+        <div class="google-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google Logo" />
+            Continue with Google
+        </div>
+        <div>
+            <p>Don't have an account<a href=""> SignUp</a></p>
+        </div>
+    </div>
+    <script src="user-signup.js"></script>
+</body>
+</html>
