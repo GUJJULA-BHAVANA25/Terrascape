@@ -20,7 +20,7 @@ app.use(express.static(staticPath));
 const { AuthRouter } = require("./Routes/authRouter");
 const { UserRouter } = require("./Routes/userRouter");
 const { PackageRouter } = require("./Routes/packageRouter");
-const { BookingRouter } = require("./Routes/bookingRouter");
+const { BookingRouter } = require("./Routes/BookingRouter");
 const { ProjectRouter } = require("./Routes/projectRouter");
 const { PostRouter } = require("./Routes/postRouter");
 const { SchedulerRouter } = require("./Routes/schedulerRouter");
