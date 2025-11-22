@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terrascape</title>
+    <title>Terrascape - Transform Your Terrace Today!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/styles.css">
@@ -18,28 +18,110 @@
         </div>
         <nav class="header-components">
             <ul class="header-components-list">
-                <li><a class="header-link" href="#">Home</a></li>
-                <li><a class="header-link" href="#">About</a></li>
-                <li><a class="header-link" href="#">Services</a></li>
-                <li><a class="header-link" href="#">Contact</a></li>
+                <li><a class="header-link" href="#home">Home</a></li>
+                <li><a class="header-link" href="#about">About</a></li>
+                <li><a class="header-link" href="#packages">Packages</a></li>
+                <li><a class="header-link" href="#testimonials">Testimonials</a></li>
+                <li><a class="header-link" href="#contact">Contact</a></li>
+                <li><a class="header-link" href="User-Signin/User-Signin.html" id="signin-link">Sign In</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main-heading">
-        <h1 class="animated-heading" data-text="Transform Your Rooftop into a Green Paradise">
-            Transform Your Rooftop into a Green Paradise
-        </h1>
-    </main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Transform Your Terrace Today!</h1>
+            <p class="hero-subtitle">Create sustainable, beautiful terrace gardens that contribute to SDG 11 & 13</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn btn-primary">Book Free Visit</a>
+                <a href="#packages" class="btn btn-secondary">Explore Packages</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- JavaScript to remove cursor after typing -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const heading = document.querySelector('.animated-heading');
-            setTimeout(() => {
-                heading.classList.add('typing-done');
-            }, 6000); // match this duration to your typing animation (6s)
-        });
-    </script>
+    <!-- Problem & Solution Section -->
+    <section class="problem-solution-section">
+        <div class="container">
+            <div class="problem-box">
+                <h2>The Problem</h2>
+                <p>Urban heat islands, lack of green spaces, food insecurity, and climate change challenges affect our cities daily.</p>
+            </div>
+            <div class="solution-box">
+                <h2>Our Solution: Terrascape</h2>
+                <p>Transform your unused terrace space into productive, beautiful gardens that reduce heat, produce food, and contribute to sustainable cities.</p>
+                <div class="sdg-badges">
+                    <span class="sdg-badge">SDG 11: Sustainable Cities</span>
+                    <span class="sdg-badge">SDG 13: Climate Action</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+        <div class="container">
+            <h2 class="section-title">Our Service Packages</h2>
+            <div class="package-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="B2C">B2C</button>
+                <button class="filter-btn" data-filter="B2B">B2B</button>
+            </div>
+            <div class="packages-grid" id="packages-grid">
+                <!-- Packages will be loaded dynamically -->
+                <p class="loading-text">Loading packages...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <!-- Testimonials will be loaded dynamically -->
+                <p class="loading-text">Loading testimonials...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Transformation Gallery</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be loaded from testimonials with images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@terrascape.com</p>
+                    <p>Phone: +91-XXXXX-XXXXX</p>
+                    <p>Address: Your City, Your State</p>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Terrascape. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main-page.js"></script>
 </body>
 </html>

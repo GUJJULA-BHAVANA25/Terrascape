@@ -1,7 +1,7 @@
-// Signup functionality
+// Signin functionality
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
-    const signupBtn = document.querySelector('.Signup-btn');
+    const signinBtn = document.querySelector('.SignIn-btn');
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -9,16 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(form);
         const data = {
             email: formData.get('email'),
-            password: formData.get('password'),
-            firstName: formData.get('firstName'),
-            lastName: formData.get('lastName')
+            password: formData.get('password')
         };
 
-        signupBtn.textContent = 'Signing up...';
-        signupBtn.disabled = true;
+        signinBtn.textContent = 'Signing in...';
+        signinBtn.disabled = true;
 
         try {
-            const response = await fetch('http://localhost:3000/api/auth/register', {
+            const response = await fetch('http://localhost:3000/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,19 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('token', result.token);
                 localStorage.setItem('user', JSON.stringify(result.user));
                 
-                alert('Signup successful! Redirecting...');
-                // Redirect to main page or dashboard
-                window.location.href = '../Main-Page.html';
+                alert('Login successful! Redirecting...');
+                // Redirect based on user role
+                if (result.user.role === 'admin') {
+                    window.location.href = '../Admin/dashboard.html';
+                } else {
+                    window.location.href = '../Main-Page.html';
+                }
             } else {
-                alert(result.message || 'Signup failed. Please try again.');
-                signupBtn.textContent = 'Signup';
-                signupBtn.disabled = false;
+                alert(result.message || 'Login failed. Please check your credentials.');
+                signinBtn.textContent = 'SignIn';
+                signinBtn.disabled = false;
             }
         } catch (error) {
-            console.error('Signup error:', error);
+            console.error('Login error:', error);
             alert('An error occurred. Please try again.');
-            signupBtn.textContent = 'Signup';
-            signupBtn.disabled = false;
+            signinBtn.textContent = 'SignIn';
+            signinBtn.disabled = false;
         }
     });
 });
+
